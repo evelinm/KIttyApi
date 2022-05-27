@@ -5,8 +5,24 @@ const PORT = 8080;
 app.use( express.json() )
 //calls befire every endpoint is called
 //middleware that converts 
+
+
+
+//GET - read
+//POST - create a new resource
+//PATCH - Update
+// Delete - Destroy
+
+//200 - good
+//400 - you messed up
+//500 - something wrong at the server level
+
+//stateless two parties do not need to save state
+
+
 // request is incoming data
 //response is outgoing data
+// send a response back to client pass js object will make it json by default
 
 app.get('/cat', (req,res) => {
     res.status(200).send({
@@ -15,6 +31,12 @@ app.get('/cat', (req,res) => {
     })
 
 });
+
+//:id - dynamic url can handle all of them
+//create a new cat on the server
+//
+
+
 
 app.post('/cat/:id', (req,res)=> {
     const { id } = req.params;
